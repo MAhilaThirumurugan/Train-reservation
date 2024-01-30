@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="Page1.css"/>
+<script>
+function validateform(){  
+	var name=document.myform.name.value;  
+	var password=document.myform.password.value; 
+	var submit=documrnt.myform.submit.value;
+	  
+	if (name==null || name==""){  
+	  alert("Enter the name before u submit");  
+	  return false;  
+	}else if(password.length<6){  
+	  alert("Password must be atleast 6 characters");  
+	  return false;  
+	  }
+	}  
+</script>
+
+</head>
+<style>
+h1{
+  
+  text-align:center;
+}
+h2{ 
+ 
+  text-align:center;
+}
+
+</style>
+
+
+<body>
+ 
+
+  
+
+ <h1  style="font-size:50px ">Hey! Welcome...</h1>
+ <h1 style="font-size:50px"> Join us to explore the World!!</h1>
+  <h2>Sign up</h2><br>
+ <center><div class="container" >
+<form name="myform"  action="TrainServlet" method="post" onsubmit="return validateform()" >
+ <label style="font-size:25px">Enter Name: </label>     <input type="text" name="name" style="font-size:30px"><br><br>
+ <label style="font-size:25px">Enter Email:</label>     <input type="email" name="email" style="font-size:30px" required><br><br>
+ <label style="font-size:25px">Enter Password:</label><input type="password" name="password"style="font-size:30px"><br><br>
+
+  <input type="submit"  name="submit" style="font-size:30px"><br><br> 
+ 
+</form>
+</div></center>
+ <center><p >Already sign up?</p></center>
+<center> <a  href="Login.html">Login</a></center>
+
+
+</body>
+</html>

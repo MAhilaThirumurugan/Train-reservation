@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="styleSheet" type="text/css" href="Page3.css"/>
+    <script>
+    let bookings = [];
+
+    function bookTicket() {
+      const name = document.getElementById('name').value;
+      const destination = document.getElementById('destination').value;
+      const date = document.getElementById('date').value;
+
+      if (name && destination && date) {
+        const newBooking = {
+          name,
+          destination,
+          date
+        };
+
+        bookings.push(newBooking);
+        displayBookings();
+        clearForm();
+        window.location.href="Option.html";
+       
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+
+    function displayBookings() {
+      const bookingList = document.getElementById('bookingList');
+      bookingList.innerHTML = '';
+
+      bookings.forEach((booking, index) => {
+        const bookingItem = document.createElement('div');
+        bookingItem.innerHTML = `<strong>${booking.name}</strong> - ${booking.destination} - ${booking.date} <button onclick="cancelBooking(${index})">Cancel</button>`;
+        bookingList.appendChild(bookingItem);
+      });
+      
+      alert("Are u sure want to book");
+
+    }
+
+    function cancelBooking(index) {
+      bookings.splice(index, 1);
+      displayBookings();
+     
+    }
+
+    function clearForm() {
+      document.getElementById('name').value = '';
+      document.getElementById('destination').value = '';
+      document.getElementById('date').value = '';
+    }
+    </script>
+
+</head>
+<body>
+
+
+  <div class="container">
+  <form  id="bookingForm" >
+    <label style="font-size:25px" for="name">Leaving From:</label><br>
+    <input style="font-size:33px" type="text" id="name" required><br>
+    <label style="font-size:25px" for="destination">Going to:</label><br>
+    <input style="font-size:33px"type="text" id="destination" required><br>
+    <label  style="font-size:25px"for="date">Date:</label><br>
+    <input style="font-size:33px"type="date" id="date" required><br><br>
+    <button type="button" style="font-size:33px" onclick="bookTicket()">Book Ticket</button><br>
+  </form>
+  
+  
+  </div><br><br>
+  <div id="bookingList"></div>
+
+
+
+
+    
+
+</body>
+
+</html>
