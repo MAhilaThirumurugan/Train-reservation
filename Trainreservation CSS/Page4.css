@@ -1,0 +1,55 @@
+
+ body {
+  font-family: cursive;
+  background-image:url("https://img.freepik.com/premium-photo/cute-doodle-travel-holiday-concept-background-pastel-sweet-color-tone-background-banner-ocard-backdrop_176697-1559.jpg?w=1380");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+.payment {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 3px solid grey;
+  border-radius: 6 px;
+  font-size: 16px;
+}
+
+button {
+  background-color: green ;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+ h1{
+    font-family:cursive;
+    font-size:45px;
+    color:grey; 
+ }
